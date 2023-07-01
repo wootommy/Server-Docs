@@ -1,3 +1,5 @@
+!*.module.css
+
 # Dependencies
 /node_modules
 
