@@ -6,32 +6,24 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  /* ------------------------------- metadata ------------------------------- */
   title: 'Server Docs [DINO | CAMO | SENO]',
   tagline: 'ServerDocs for NAMI Lab Servers.',
   favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  /* ------------------------------ deployment ------------------------------ */
+  url: 'https://serverdocs.netlify.app/',
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'wootommy', // Usually your GitHub org/user name.
-  projectName: 'Server-Docs', // Usually your repo name.
-
+  organizationName: 'wootommy',
+  projectName: 'Server-Docs',
+  /* ------------------------------- behavior ------------------------------- */
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  /* ---------------------------- internalization --------------------------- */
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'en'],
   },
-
+  /* -------------------------------- presets ------------------------------- */
   presets: [
     [
       'classic',
@@ -39,15 +31,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -55,12 +41,21 @@ const config = {
       }),
     ],
   ],
-
+  /* ------------------------------ themeconfig ----------------------------- */
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      /* ---------------------------- social card --------------------------- */
+      image: 'img/docusaurus.png',
+      /* ------------------------- announcement bar ------------------------- */
+      announcementBar: {
+        id: 'welcome',
+        content: 'Welcome to the New NAMI Lab Server Docs!',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: true,
+      },
+      /* ------------------------------ navbar ------------------------------ */
       navbar: {
         title: 'Server Docs',
         logo: {
@@ -82,54 +77,27 @@ const config = {
           // },
         ],
       },
+      /* ------------------------------ footer ------------------------------ */
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        style: 'light',
+        copyright: `Copyright &copy ${new Date().getFullYear()} NAMI Lab, Tongji University.`,
       },
+      /* -------------------------------- toc ------------------------------- */
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4,
+      },
+      /* ------------------------------- prism ------------------------------ */
       prism: {
+        defaultLanguage: 'shell',
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      /* ---------------------------- color mode ---------------------------- */
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
     }),
 }
