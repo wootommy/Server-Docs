@@ -41,7 +41,7 @@ const config = {
       }),
     ],
   ],
-  /* ------------------------------ themeconfig ----------------------------- */
+  /* ----------------------------- theme config ----------------------------- */
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -65,7 +65,7 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Tutorial',
           },
